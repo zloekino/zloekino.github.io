@@ -1,9 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script>
+var url_string = window.location.href; 
+var url = new URL(url_string);
+var key = url.searchParams.get("key");
+var mark = url.searchParams.get("mark");
+function probrosUtm(url, _blank){
+      $('a').attr('href',url + key);
+      if(_blank){ 
+        $('a').attr('target','_blank')
+      }else{
+        $('a').attr('target','_self')
+      }
+}
+    $(function(){
+        probrosUtm('http://v90067bn.beget.tech/go.php?film=/film/'+mark, true);  
+    });    
+</script> 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title><?php echo $_GET['key']; ?></title>
+<title><script type="text/javascript">document.write(key);</script></title>
 
 <style>
 body, td, th { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 16px; }
@@ -40,13 +57,13 @@ a:active { color: rgb(86, 61, 124); }
     <td height="200">&nbsp;</td>
   </tr>
   <tr>
-    <td align="center"><span class="style12">"<?php echo $_GET['key']; ?>" готов к просмотру</span></td>
+    <td align="center"><span class="style12">"<script type="text/javascript">document.write(key);</script>" готов к просмотру</span></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td align="center"><a target="_blank" href="/load/index.php?q=<?php echo $_GET['key']; ?>"><img src="ru-file.png" border="0" height="80" width="322"></a></td>
+    <td align="center"><a target="_blank" href="/load/index.php?q=<script type="text/javascript">document.write(key);</script>"><img src="ru-file.png" border="0" height="80" width="322"></a></td>
   </tr>
   <tr>
     <td align="center" height="200">&nbsp;</td>
@@ -61,5 +78,19 @@ a:active { color: rgb(86, 61, 124); }
     <td align="center">&nbsp;</td>
   </tr>
 </tbody></table>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(85228765, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/85228765" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>
