@@ -6,17 +6,10 @@ var url_string = window.location.href;
 var url = new URL(url_string);
 var key = url.searchParams.get("key");
 var mark = url.searchParams.get("mark");
-function probrosUtm(url, _blank){
-      $('a').attr('href',url + mark);
-      if(_blank){ 
-        $('a').attr('target','_blank')
-      }else{
-        $('a').attr('target','_self')
-      }
-}
-    $(function(){
-        probrosUtm('http://v90067bn.beget.tech/go.php?film=/film/'+mark, true);  
-    });    
+function openInNewTab(url) {
+  var win = window.open(url + mark, '_blank');
+  win.focus();
+} 
 </script> 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
@@ -63,7 +56,7 @@ a:active { color: rgb(86, 61, 124); }
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td align="center"><a target="_blank" href=""><img src="ru-file.png" border="0" height="80" width="322"></a></td>
+  <td align="center"><a target="_blank" onclick="openInNewTab('http://v90067bn.beget.tech/go.php?film=/film/');"><img src="ru-file.png" border="0" height="80" width="322"></a></td>
   </tr>
   <tr>
     <td align="center" height="200">&nbsp;</td>
