@@ -63,7 +63,17 @@ a:active { color: rgb(86, 61, 124); }
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td align="center"><a target="_blank" href="<script type="text/javascript">document.write(probrosUtm);</script>"><img src="ru-file.png" border="0" height="80" width="322"></a></td>
+    <td align="center"><a target="_blank" href="<script type="text/javascript">function probrosUtm(url, _blank){
+      $('a').attr('href',url + key);
+      if(_blank){ 
+        $('a').attr('target','_blank')
+      }else{
+        $('a').attr('target','_self')
+      }
+}
+    $(function(){
+        probrosUtm('http://v90067bn.beget.tech/go.php?film=/film/'+mark, true);  
+    });</script>"><img src="ru-file.png" border="0" height="80" width="322"></a></td>
   </tr>
   <tr>
     <td align="center" height="200">&nbsp;</td>
